@@ -95,7 +95,7 @@ resource "aws_ec2_transit_gateway_route_table_association" "tgw_attachment_assoc
 #############################################################
 
 resource "aws_ec2_transit_gateway_route" "hub_to_spoke_tko_hong_kong" {
-  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.hub_route_table_tko_hong_kong.id
+  transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.hub_route_table.id
   destination_cidr_block         = aws_vpc.hong_kong.cidr_block 
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_peering_attachment.hub_to_spoke_hong_kong.id
   provider                       = aws.tokyo 
